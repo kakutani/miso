@@ -17,8 +17,7 @@ module SelectionHelpers
     # TODO: gimme fancy example :<
 
     else
-      raise "Can't find mapping from \"#{selector_name}\" to a selector.\n" +
-        "Now, go and add a mapping in #{__FILE__}"
+      selector_name
     end
   end
 end
