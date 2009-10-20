@@ -7,6 +7,8 @@ class MisoGenerator < Rails::Generator::Base
       %w[webrat_ja_steps.rb web_extra_ja_steps.rb].each do |step|
         m.file step, File.join('features/step_definitions', step)
       end
+      m.directory 'features/support'
+      m.file 'selectors.rb', File.join('features/support', 'selectors.rb')
     end
   end
 

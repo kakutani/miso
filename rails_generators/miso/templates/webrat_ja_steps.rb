@@ -115,8 +115,8 @@ Then /^"([^\"]*)"と表示されていること$/ do |text|
 end
 
 # opposite order from English definition
-Then /^"([^\"]*)"に"([^\"]*)"と表示されていること$/ do |selector, text|
-  Then %Q(I should see "#{text}" within "#{selector}")
+Then /^"([^\"]*)"に"([^\"]*)"と表示されていること$/ do |named_selector, text|
+  Then %Q(I should see "#{text}" within "#{selector_for(named_selector)}")
 end
 
 Then /^\/([^\/]*)\/と表示されていること$/ do |regexp|
@@ -124,8 +124,8 @@ Then /^\/([^\/]*)\/と表示されていること$/ do |regexp|
 end
 
 # opposite order from English definition
-Then /^"([^\"]*)"に\/([^\/]*)\/と表示されていること$/ do |selector, regexp|
-  Then %Q(I should see \/#{regexp}\/ within "#{selector}")
+Then /^"([^\"]*)"に\/([^\/]*)\/と表示されていること$/ do |named_selector, regexp|
+  Then %Q(I should see \/#{regexp}\/ within "#{selector_for(named_selector)}")
 end
 
 Then /^"([^\"]*)"と表示されていないこと$/ do |text|
@@ -133,8 +133,8 @@ Then /^"([^\"]*)"と表示されていないこと$/ do |text|
 end
 
 # opposite order from English definition
-Then /^"([^\"]*)"に"([^\"]*)"と表示されていないこと$/ do |selector, text|
-  Then %Q(I should not see "#{text}" within "#{selector}")
+Then /^"([^\"]*)"に"([^\"]*)"と表示されていないこと$/ do |named_selector, text|
+  Then %Q(I should not see "#{text}" within "#{selector_for(named_selector)}")
 end
 
 Then /^\/([^\/]*)\/と表示されていないこと$/ do |regexp|
@@ -142,8 +142,8 @@ Then /^\/([^\/]*)\/と表示されていないこと$/ do |regexp|
 end
 
 # opposite order from English definition
-Then /^"([^\"]*)"に\/([^\/]*)\/と表示されていないこと$/ do |selector, regexp|
-  Then %Q(I should not see \/#{regexp}\/ within "#{selector}")
+Then /^"([^\"]*)"に\/([^\/]*)\/と表示されていないこと$/ do |named_selector, regexp|
+  Then %Q(I should not see \/#{regexp}\/ within "#{selector_for(named_selector)}")
 end
 
 Then /^入力項目"([^\"]*)"に"([^\"]*)"と表示されていること$/ do |field, value|
